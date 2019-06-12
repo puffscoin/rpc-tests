@@ -5,8 +5,8 @@ MOCHA = @./node_modules/mocha/bin/mocha --reporter $(REPORTER)
 test:
 	$(MOCHA) test/*.js
 
-test.eth:
-	$(MOCHA) test/1_testConnection.js test/eth_*.js
+test.puffs:
+	$(MOCHA) test/1_testConnection.js test/puffs_*.js
 
 test.shh:
 	$(MOCHA) test/1_testConnection.js test/shh_*.js
@@ -17,8 +17,8 @@ test.net:
 test.ipc:
 	$(MOCHA) test/*.js --ipc
 
-test.eth.ipc:
-	$(MOCHA) test/1_testConnection.js test/eth_*.js --ipc
+test.puffs.ipc:
+	$(MOCHA) test/1_testConnection.js test/puffs_*.js --ipc
 
 test.shh.ipc:
 	$(MOCHA) test/1_testConnection.js test/shh_*.js --ipc
