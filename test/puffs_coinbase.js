@@ -3,7 +3,7 @@ var config = require('../lib/config'),
     assert = require('chai').assert;
 
 // METHOD
-var method = 'eth_coinbase';
+var method = 'puffs_coinbase';
 
 // TEST
 var asyncTest = function(host, done){
