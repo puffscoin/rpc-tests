@@ -3,7 +3,7 @@
 //     assert = require('chai').assert;
 
 // // METHOD
-// var method = 'eth_mining';
+// var method = 'puffs_mining';
 
 // // TEST
 // var asyncTest = function(host, done){
