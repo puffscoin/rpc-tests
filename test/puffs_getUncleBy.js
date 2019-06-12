@@ -47,7 +47,7 @@ var asyncErrorTest = function(host, done, method, params){
 };
 
 
-var method1 = 'eth_getUncleByBlockHashAndIndex';
+var method1 = 'puffs_getUncleByBlockHashAndIndex';
 describe(method1, function(){
 
     Helpers.eachHost(function(key, host){
