@@ -3,7 +3,7 @@ var config = require('../lib/config'),
     assert = require('chai').assert;
 
 // METHOD
-var method = 'eth_uninstallFilter';
+var method = 'puffs_uninstallFilter';
 
 // TEST
 var asyncTest = function(host, done, filterId){
@@ -53,7 +53,7 @@ describe(method, function(){
             it('should return a boolean when uninstalling a block filter', function(done){
                 // INSTALL a block filter first
                 Helpers.send(host, {
-                    id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_newBlockFilter',
+                    id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_newBlockFilter',
                     
                     // PARAMETERS
                     params: []
@@ -70,7 +70,7 @@ describe(method, function(){
             it('should return a boolean when uninstalling a options filter', function(done){
                 // INSTALL a options filter first
                 Helpers.send(host, {
-                    id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_newFilter',
+                    id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_newFilter',
                     
                     // PARAMETERS
                     params: [{
