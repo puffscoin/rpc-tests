@@ -4,7 +4,7 @@ var config = require('../lib/config'),
     _ = require('underscore');
 
 // METHOD
-var method = 'eth_call';
+var method = 'puffs_call';
 
 
 // TEST
