@@ -4,7 +4,7 @@ var config = require('../lib/config'),
     _ = require('underscore');
 
 // METHOD
-var method = 'eth_getUncleCountByBlockHash';
+var method = 'puffs_getUncleCountByBlockHash';
 
 // GET test BLOCK 4
 var block4 = Helpers.getBlockByNumber(4);
