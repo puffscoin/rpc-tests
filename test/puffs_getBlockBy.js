@@ -85,7 +85,7 @@ var asyncErrorTest = function(host, done, method, params){
 
 
 
-var method1 = 'eth_getBlockByNumber';
+var method1 = 'puffs_getBlockByNumber';
 describe(method1, function(){
 
     Helpers.eachHost(function(key, host){
@@ -129,7 +129,7 @@ describe(method1, function(){
 });
 
 
-var method2 = 'eth_getBlockByHash';
+var method2 = 'puffs_getBlockByHash';
 describe(method2, function(){
 
     Helpers.eachHost(function(key, host){
