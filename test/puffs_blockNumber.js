@@ -3,7 +3,7 @@ var config = require('../lib/config'),
     assert = require('chai').assert;
 
 // METHOD
-var method = 'eth_blockNumber';
+var method = 'puffs_blockNumber';
 
 // TEST
 var asyncTest = function(host, done){
