@@ -55,7 +55,7 @@ var asyncErrorTest = function(host, done, method, params){
 
 
 
-var method1 = 'eth_getTransactionByHash';
+var method1 = 'puffs_getTransactionByHash';
 describe(method1, function(){
 
     Helpers.eachHost(function(key, host){
@@ -65,7 +65,7 @@ describe(method1, function(){
                     it('should return a transaction with the proper structure', function(done){
                         
                         Helpers.send(host, {
-                            id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_getBlockByHash',
+                            id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_getBlockByHash',
                             
                             // PARAMETERS
                             params: ['0x'+ bl.blockHeader.hash, false]
@@ -92,7 +92,7 @@ describe(method1, function(){
 });
 
 
-var method2 = 'eth_getTransactionByBlockHashAndIndex';
+var method2 = 'puffs_getTransactionByBlockHashAndIndex';
 describe(method2, function(){
 
     Helpers.eachHost(function(key, host){
@@ -117,7 +117,7 @@ describe(method2, function(){
 });
 
 
-var method3 = 'eth_getTransactionByBlockNumberAndIndex';
+var method3 = 'puffs_getTransactionByBlockNumberAndIndex';
 describe(method3, function(){
 
     Helpers.eachHost(function(key, host){
@@ -142,7 +142,7 @@ describe(method3, function(){
 
                 // send transaction
                 Helpers.send(host, {
-                    id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_sendTransaction',
+                    id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_sendTransaction',
                     
                     // PARAMETERS
                     params: [{
