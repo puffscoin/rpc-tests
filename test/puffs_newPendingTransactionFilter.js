@@ -4,7 +4,7 @@ var config = require('../lib/config'),
     currentFilterId = null;
 
 // METHOD
-var method = 'eth_newPendingTransactionFilter';
+var method = 'puffs_newPendingTransactionFilter';
 
 
 // TEST
@@ -58,7 +58,7 @@ describe(method, function(){
             afterEach(function(){
                 if(currentFilterId) {
                     Helpers.send(host, {
-                        id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_uninstallFilter',
+                        id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_uninstallFilter',
                         
                         // PARAMETERS
                         params: [currentFilterId]
