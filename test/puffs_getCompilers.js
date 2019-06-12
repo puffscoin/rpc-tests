@@ -3,7 +3,7 @@ var config = require('../lib/config'),
     assert = require('chai').assert;
 
 // METHOD
-var method = 'eth_getCompilers';
+var method = 'puffs_getCompilers';
 
 // TEST
 var asyncTest = function(host, done){
