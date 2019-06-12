@@ -3,7 +3,7 @@ var config = require('../lib/config'),
     assert = require('chai').assert;
 
 // METHOD
-var method = 'eth_protocolVersion';
+var method = 'puffs_protocolVersion';
 
 // TEST
 var asyncTest = function(host, done){
