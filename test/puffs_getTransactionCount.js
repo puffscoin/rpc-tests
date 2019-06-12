@@ -3,7 +3,7 @@ var config = require('../lib/config'),
     assert = require('chai').assert;
 
 // METHOD
-var method = 'eth_getTransactionCount';
+var method = 'puffs_getTransactionCount';
 
 
 // TEST
