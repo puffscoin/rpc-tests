@@ -3,7 +3,7 @@ var config = require('../lib/config'),
     assert = require('chai').assert;
 
 // METHOD
-var method = 'eth_gasPrice';
+var method = 'puffs_gasPrice';
 
 // TEST
 var asyncTest = function(host, done){
