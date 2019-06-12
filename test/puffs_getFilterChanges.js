@@ -6,9 +6,9 @@ var config = require('../lib/config'),
 return;
 
 // METHOD
-var method = 'eth_getFilterChanges',
+var method = 'puffs_getFilterChanges',
     uninstallFilter = function(host, id) {
-        Helpers.send(host, {id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_uninstallFilter', params: [id] }, function(){});
+        Helpers.send(host, {id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_uninstallFilter', params: [id] }, function(){});
     };
 
 // TEST
@@ -65,7 +65,7 @@ describe(method, function(){
                 it('should return the correct log once after a transaction was send and when filtering without defining an address', function(done){
                     // INSTALL a options filter first
                     var optionsFilterId = Helpers.send(host, {
-                        id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_newFilter',
+                        id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_newFilter',
                         
                         // PARAMETERS
                         params: [{
@@ -79,7 +79,7 @@ describe(method, function(){
 
                             // send transaction
                             Helpers.send(host, {
-                                id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_sendTransaction',
+                                id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_sendTransaction',
                                 
                                 // PARAMETERS
                                 params: [{
@@ -117,7 +117,7 @@ describe(method, function(){
                 it('should return the correct log once after a transaction was send and when filtering with address', function(done){
                     // INSTALL a options filter first
                     var optionsFilterId = Helpers.send(host, {
-                        id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_newFilter',
+                        id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_newFilter',
                         
                         // PARAMETERS
                         params: [{
@@ -132,7 +132,7 @@ describe(method, function(){
 
                             // send transaction
                             Helpers.send(host, {
-                                id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_sendTransaction',
+                                id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_sendTransaction',
                                 
                                 // PARAMETERS
                                 params: [{
