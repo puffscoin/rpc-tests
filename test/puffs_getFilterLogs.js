@@ -4,9 +4,9 @@ var config = require('../lib/config'),
     _ = require('underscore');
 
 // METHOD
-var method = 'eth_getFilterLogs',
+var method = 'puffs_getFilterLogs',
     uninstallFilter = function(host, id, done) {
-        Helpers.send(host, {id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_uninstallFilter', params: [id] }, function(){ done(); });
+        Helpers.send(host, {id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_uninstallFilter', params: [id] }, function(){ done(); });
     };
 
 // TEST
@@ -61,7 +61,7 @@ describe(method, function(){
                 it('should return the correct log, when filtering without defining an address', function(done){
                     // INSTALL a options filter first
                     Helpers.send(host, {
-                        id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_newFilter',
+                        id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_newFilter',
                         
                         // PARAMETERS
                         params: [{
@@ -84,7 +84,7 @@ describe(method, function(){
                 it('should return the correct log, when filtering with address', function(done){
                     // INSTALL a options filter first
                     Helpers.send(host, {
-                        id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_newFilter',
+                        id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_newFilter',
                         
                         // PARAMETERS
                         params: [{
@@ -109,7 +109,7 @@ describe(method, function(){
             it('should return a list of logs, when asking without defining an address and using toBlock "latest"', function(done){
                 // INSTALL a options filter first
                 Helpers.send(host, {
-                    id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_newFilter',
+                    id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_newFilter',
                     
                     // PARAMETERS
                     params: [{
@@ -130,7 +130,7 @@ describe(method, function(){
             it('should return a list of logs, when asking without defining an address and using toBlock "pending"', function(done){
                 // INSTALL a options filter first
                 Helpers.send(host, {
-                    id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_newFilter',
+                    id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_newFilter',
                     
                     // PARAMETERS
                     params: [{
@@ -151,7 +151,7 @@ describe(method, function(){
             it('should return a list of logs, when filtering with defining an address and using toBlock "latest"', function(done){
                 // INSTALL a options filter first
                 Helpers.send(host, {
-                    id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_newFilter',
+                    id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_newFilter',
                     
                     // PARAMETERS
                     params: [{
@@ -175,7 +175,7 @@ describe(method, function(){
 
                 // INSTALL a options filter first
                 Helpers.send(host, {
-                    id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_newFilter',
+                    id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_newFilter',
                     
                     // PARAMETERS
                     params: [{
@@ -197,7 +197,7 @@ describe(method, function(){
             it('should return a list of logs, when filtering by topic "0x0000000000000000000000000000000000000000000000000000000000000001"', function(done){
                 // INSTALL a options filter first
                 Helpers.send(host, {
-                    id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_newFilter',
+                    id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_newFilter',
                     
                     // PARAMETERS
                     params: [{
@@ -225,7 +225,7 @@ describe(method, function(){
             it('should return a list of anonymous logs, when filtering by topic "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"', function(done){
                 // INSTALL a options filter first
                 Helpers.send(host, {
-                    id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_newFilter',
+                    id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_newFilter',
                     
                     // PARAMETERS
                     params: [{
@@ -254,7 +254,7 @@ describe(method, function(){
             it('should return a list of logs, when filtering by topic "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"', function(done){
                 // INSTALL a options filter first
                 Helpers.send(host, {
-                    id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_newFilter',
+                    id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_newFilter',
                     
                     // PARAMETERS
                     params: [{
