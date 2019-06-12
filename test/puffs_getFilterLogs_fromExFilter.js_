@@ -4,9 +4,9 @@ var config = require('../lib/config'),
     _ = require('underscore');
 
 // METHOD
-var method = 'eth_getFilterLogs',
+var method = 'puffs_getFilterLogs',
     uninstallFilter = function(host, id, done) {
-        Helpers.send(host, {id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_uninstallFilter', params: [id] }, function(){
+        Helpers.send(host, {id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_uninstallFilter', params: [id] }, function(){
             done();
         });
     };
@@ -63,7 +63,7 @@ describe(method, function(){
                 it('should return the correct log, when filtering without defining an address', function(done){
                     // INSTALL a options filter first
                     Helpers.send(host, {
-                        id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_newFilterEx',
+                        id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_newFilterEx',
                         
                         // PARAMETERS
                         params: [{
@@ -86,7 +86,7 @@ describe(method, function(){
                 it('should return the correct log, when filtering with address', function(done){
                     // INSTALL a options filter first
                     Helpers.send(host, {
-                        id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_newFilterEx',
+                        id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_newFilterEx',
                         
                         // PARAMETERS
                         params: [{
@@ -112,7 +112,7 @@ describe(method, function(){
             it('should return the reverted logs', function(done){
                 // INSTALL a options filter first
                 Helpers.send(host, {
-                    id: config.rpcMessageId++, jsonrpc: "2.0", method: 'eth_newFilterEx',
+                    id: config.rpcMessageId++, jsonrpc: "2.0", method: 'puffs_newFilterEx',
                     
                     // PARAMETERS
                     params: [config.specialLogQuery]
